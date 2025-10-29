@@ -603,6 +603,11 @@ body {
   font-weight: 400;
 }
 
+.quinceanera-img {
+  max-width: 250px;
+  max-height: 25vh;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-content {
@@ -707,6 +712,9 @@ body {
   .address {
     padding: 0 0.5rem;
   }
+
+
+
 }
 
 @media (max-width: 360px) {

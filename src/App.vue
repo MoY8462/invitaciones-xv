@@ -29,6 +29,7 @@ const evento = ref({
     <section class="hero">
       <div class="hero-content">
         <h1 class="main-title">Mis Quince Años</h1>
+        <img class="quinceanera-img" src="./assets/quinceanera.png" alt="Getsemani Abigail">
         <h2 class="name">{{ quinceañera.nombre }}</h2>
         <h3 class="lastname">{{ quinceañera.apellidos }}</h3>
         <div class="date-container">

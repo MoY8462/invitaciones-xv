@@ -1,0 +1,42 @@
+<!-- filepath: /Users/moisessanchez/Downloads/WebDevelopment/invitaciones-xv/public/quince-icon.svg -->
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Base de la corona -->
+  <path d="M3 20 L6 12 L10 17 L16 6 L22 17 L26 12 L29 20 L28 24 L4 24 Z" 
+        fill="#a569bd" 
+        stroke="#8e44ad" 
+        stroke-width="0.8"/>
+  
+  <!-- Banda inferior de la corona -->
+  <rect x="4" y="22" width="24" height="4" rx="2" fill="#c8a8e9"/>
+  
+  <!-- Gemas principales -->
+  <ellipse cx="10" cy="15" rx="1.5" ry="2" fill="#e8d8ff" stroke="#a569bd" stroke-width="0.3"/>
+  <ellipse cx="16" cy="9" rx="2" ry="2.5" fill="#e8d8ff" stroke="#a569bd" stroke-width="0.3"/>
+  <ellipse cx="22" cy="15" rx="1.5" ry="2" fill="#e8d8ff" stroke="#a569bd" stroke-width="0.3"/>
+  
+  <!-- Número 15 en el centro -->
+  <text x="16" y="21" 
+        font-family="serif" 
+        font-size="6" 
+        font-weight="bold" 
+        text-anchor="middle" 
+        fill="white">XV</text>
+  
+  <!-- Detalles decorativos pequeños -->
+  <circle cx="8" cy="18" r="0.8" fill="#f4f0ff"/>
+  <circle cx="24" cy="18" r="0.8" fill="#f4f0ff"/>
+  
+  <!-- Brillos y destellos -->
+  <circle cx="11" cy="13" r="0.4" fill="white" opacity="0.9"/>
+  <circle cx="21" cy="13" r="0.4" fill="white" opacity="0.9"/>
+  <circle cx="16" cy="7" r="0.5" fill="white" opacity="0.8"/>
+  
+  <!-- Detalles de estrellas pequeñas -->
+  <g fill="white" opacity="0.7">
+    <polygon points="6,10 6.5,11 7,10 6.5,9" transform="scale(0.5)"/>
+    <polygon points="25,10 25.5,11 26,10 25.5,9" transform="scale(0.5)"/>
+  </g>
+  
+  <!-- Sombra interior para profundidad -->
+  <path d="M4 22 L28 22 L27 24 L5 24 Z" fill="rgba(0,0,0,0.1)"/>
+</svg>

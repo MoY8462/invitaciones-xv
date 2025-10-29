@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const quinceañera = ref({
   nombre: "Getsemani Abigail",
-  apellidos: "Sanchez Sanchez",
+  apellidos: "Sánchez Sánchez",
   fecha: "6 de Diciembre, 2025",
   hora: "16:00 hrs"
 })

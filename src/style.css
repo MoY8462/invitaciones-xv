@@ -1,79 +1,399 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #2c2c2c;
+  overflow-x: hidden;
+}
+
+.landing-page {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #e8d8ff 0%, #c8a8e9 50%, #a569bd 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+  background-size: 50px 50px;
+  animation: sparkle 4s ease-in-out infinite;
 }
 
-.card {
-  padding: 2em;
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
   padding: 2rem;
+}
+
+.main-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.lastname {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  margin-bottom: 2rem;
+  letter-spacing: 4px;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.date-container {
+  background: rgba(255,255,255,0.95);
+  padding: 1.5rem 2.5rem;
+  border-radius: 50px;
+  margin: 2rem auto;
+  max-width: 450px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.date {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.ornament {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* Events Section */
+.events-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f4f0ff 100%);
+  position: relative;
+}
+
+.events-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M100 0L120 80L200 100L120 120L100 200L80 120L0 100L80 80Z" fill="rgba(165,105,189,0.03)"/></svg>');
+  background-size: 200px 200px;
+  opacity: 0.5;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #a569bd, #c8a8e9, #e8d8ff);
+  margin: 1.5rem auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(165, 105, 189, 0.3);
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.event-card {
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #a569bd, #c8a8e9);
+  transition: height 0.4s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+  border-color: rgba(165, 105, 189, 0.2);
+}
+
+.event-card:hover::before {
+  height: 8px;
+}
+
+.misa-card {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.fiesta-card {
+  background: linear-gradient(135deg, #fff 0%, #f4f0ff 100%);
+}
+
+.card-header {
+  padding: 2.5rem 2rem 1rem;
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.card-header .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.card-header h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.card-body {
+  padding: 1rem 2rem 2.5rem;
+}
+
+.card-body h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+}
+
+.address {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.time-badge {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #a569bd, #c8a8e9);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(165, 105, 189, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.time-badge:hover {
+  transform: scale(1.05);
+}
+
+/* RSVP Section */
+.rsvp-section {
+  background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+  padding: 6rem 0;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.rsvp-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
+  background-size: 30px 30px;
+}
+
+.rsvp-text {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.contact-info {
+  background: rgba(255,255,255,0.1);
+  padding: 2.5rem;
+  border-radius: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-info p {
+  margin: 1.2rem 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  padding: 3rem 0;
+  text-align: center;
+  color: white;
+}
+
+.footer p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
   }
-  a:hover {
-    color: #747bff;
+  
+  .event-card {
+    margin: 0;
   }
-  button {
-    background-color: #f9f9f9;
+  
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .event-card {
+    border-radius: 20px;
+  }
+  
+  .card-header {
+    padding: 2rem 1.5rem 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem 1.5rem 2rem;
+  }
+  
+  .contact-info {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
   }
 }

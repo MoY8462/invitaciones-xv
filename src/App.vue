@@ -1,30 +1,96 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+
+const quinceañera = ref({
+  nombre: "Getsemani Abigail",
+  apellidos: "Sanchez Sanchez",
+  fecha: "6 de Diciembre, 2025",
+  hora: "16:00 hrs"
+})
+
+const misa = ref({
+  iglesia: "Nuestra Señora del Carmen",
+  direccion: "Buenavista esquina Olivos N°1, Colonia Loma Colorada 2da sección, Naucalpan de Juárez, Estado de México.",
+  hora: "16:00 hrs"
+})
+
+const evento = ref({
+  salon: "Rancho Millán",
+  direccion: "Francisco Villa #10, C.P. 53427, Naucalpan de Juárez, Estado de México.",
+  hora: "17:30 hrs"
+})
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="landing-page">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="main-title">Mis Quince Años</h1>
+        <h2 class="name">{{ quinceañera.nombre }}</h2>
+        <h3 class="lastname">{{ quinceañera.apellidos }}</h3>
+        <div class="date-container">
+          <p class="date">{{ quinceañera.fecha }}</p>
+        </div>
+        <div class="ornament">✨ 💫 ✨</div>
+      </div>
+    </section>
+
+    <!-- Events Section - Combined -->
+    <section class="events-section">
+      <div class="container">
+        <h3 class="section-title">Itinerario del Evento</h3>
+        <div class="events-grid">
+          <!-- Misa Card -->
+          <div class="event-card misa-card">
+            <div class="card-header">
+              <div class="icon">⛪</div>
+              <h4>Ceremonia Religiosa</h4>
+            </div>
+            <div class="card-body">
+              <h5>{{ misa.iglesia }}</h5>
+              <p class="address">{{ misa.direccion }}</p>
+              <div class="time-badge">{{ misa.hora }}</div>
+            </div>
+          </div>
+
+          <!-- Evento Card -->
+          <div class="event-card fiesta-card">
+            <div class="card-header">
+              <div class="icon">🎉</div>
+              <h4>Celebración</h4>
+            </div>
+            <div class="card-body">
+              <h5>{{ evento.salon }}</h5>
+              <p class="address">{{ evento.direccion }}</p>
+              <div class="time-badge">{{ evento.hora }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section">
+      <div class="container">
+        <h3 class="section-title">Confirma tu Asistencia</h3>
+        <p class="rsvp-text">Tu presencia hará este día aún más especial</p>
+        <div class="contact-info">
+          <p>📞 Confirmar al: (555) 123-4567</p>
+          <p>💌 WhatsApp: +52 555 123 4567</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>"Gracias por acompañarme en este día tan especial"</p>
+        <div class="ornament">💖</div>
+      </div>
+    </footer>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>

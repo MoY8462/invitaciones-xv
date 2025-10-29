@@ -163,6 +163,15 @@ body {
   position: relative;
 }
 
+.section-title-footer {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #f4f0ff;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
 .section-title::after {
   content: '';
   display: block;
@@ -176,11 +185,11 @@ body {
 
 /* Events Grid */
 .events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
+  display: flex;
+  gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .event-card {
@@ -191,6 +200,9 @@ body {
   overflow: hidden;
   position: relative;
   border: 2px solid transparent;
+  flex: 1;
+  max-width: 400px;
+  min-width: 350px;
 }
 
 .event-card::before {
@@ -257,6 +269,7 @@ body {
   font-weight: 600;
   color: #2c2c2c;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .address {
@@ -275,13 +288,59 @@ body {
   background: linear-gradient(135deg, #a569bd, #c8a8e9);
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
-  display: inline-block;
+  display: block;
   box-shadow: 0 5px 15px rgba(165, 105, 189, 0.3);
   transition: transform 0.3s ease;
+  text-align: center;
+  margin: 0 auto 1.5rem auto;
+  width: fit-content;
 }
 
 .time-badge:hover {
   transform: scale(1.05);
+}
+
+/* Maps Button */
+.maps-button {
+  display: block;
+  background: white;
+  color: #a569bd;
+  text-decoration: none;
+  padding: 0.9rem 1.8rem;
+  border: 2px solid #a569bd;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.maps-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #a569bd, #c8a8e9);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.maps-button:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(165, 105, 189, 0.3);
+}
+
+.maps-button:hover::before {
+  width: 100%;
 }
 
 /* RSVP Section */
@@ -345,13 +404,16 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .events-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
     padding: 0 1rem;
   }
   
   .event-card {
-    margin: 0;
+    margin: 0 auto;
+    min-width: auto;
+    max-width: 450px;
+    width: 100%;
   }
   
   .hero-content {
@@ -365,16 +427,26 @@ body {
   .section-title {
     margin-bottom: 3rem;
   }
+  
+  .maps-button {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .time-badge {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.3rem;
+  }
 }
 
 @media (max-width: 480px) {
   .events-grid {
-    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
   .event-card {
     border-radius: 20px;
+    max-width: none;
   }
   
   .card-header {
@@ -389,11 +461,32 @@ body {
     padding: 2rem;
     margin: 0 1rem;
   }
+  
+  .maps-button {
+    font-size: 0.85rem;
+    padding: 0.7rem 1.3rem;
+  }
+  
+  .time-badge {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 @media (min-width: 1200px) {
   .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    gap: 3rem;
+  }
+  
+  .event-card {
+    max-width: 450px;
+  }
+  
+  .maps-button {
+    padding: 1rem 2rem;
+  }
+  
+  .time-badge {
+    padding: 0.9rem 1.8rem;
   }
 }
